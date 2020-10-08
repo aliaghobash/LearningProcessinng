@@ -1,0 +1,37 @@
+int OFF_MAX=300;
+int y;
+int i=0;
+void setup() {
+  size(600, 600, P3D);
+};
+void draw() {
+  background(0);
+  translate(width/2, height/2, 0);
+  for (int xo=-OFF_MAX; xo<=OFF_MAX; xo+=50) {
+    y+=1;
+    pushMatrix();
+    translate(xo, 0, 0);
+    rotateX(PI/3.0);
+    //box(30);
+    for (int i=0; i<width; i+=100) {
+      rect(-26+i, -26+y*0.1, 52, 52); 
+      rect(-26+i, -26+55+y*0.1, 52, 52);
+      rect(-26+i, -26+110+y*0.1, 52, 52);
+
+      rect(-26+i, -26+110+y*0.1, 52, 52);
+
+      //rect(-26-100, -26-200+y*0.1, 52, 52);
+      //rect(-26-200, -26-400+y*0.1, 52, 52);
+    };
+
+
+    popMatrix();
+    pushMatrix();
+      rotateX(PI);
+         rect(-26+i, -26+110+y*0.1, 52, 52);
+    popMatrix();
+  }
+  if (y>height) {
+    //y+=height;
+  };
+};
