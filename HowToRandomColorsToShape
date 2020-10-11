@@ -1,0 +1,14 @@
+float i;
+void setup() {
+  size(400, 400);
+  background(255);
+}
+void draw() {
+   i=i+1*0.01;
+  for (float i=0; i<width; i++) {
+    background(255);
+   fill(random(255),random(0),random(0));
+      ellipse(width/2,height/2,100,100);
+  };
+
+}
