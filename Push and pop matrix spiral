@@ -1,0 +1,45 @@
+float angle;
+PImage img;
+PImage img2;
+float x;
+void setup() { 
+  background(255);
+  size(900, 900); 
+  img = loadImage("mySpiral.png");
+  img2 = loadImage("mySpiral.png");
+};
+void draw() {
+  spiral01();
+  spiral02();
+};
+
+
+void spiral01() {
+  pushMatrix();
+  translate(100, 100);
+  ////rectMode(CENTER);
+  imageMode(CENTER);
+  ////x=x+1;
+  ////y=y+1;
+  rotate(angle);
+  image(img, x, 0, 300, 300);
+  //ellipse(0, 0, 100, 100);
+  angle=angle+1*0.01;
+
+  popMatrix();
+};
+void spiral02() {
+    pushMatrix();
+  translate(100, 400);
+  ////rectMode(CENTER);
+  imageMode(CENTER);
+  ////x=x+1;
+  ////y=y+1;
+  rotate(angle);
+  image(img, x, 0, 300, 300);
+  //ellipse(0, 0, 100, 100);
+  angle=angle+1*0.01;
+
+  popMatrix();
+  
+};
