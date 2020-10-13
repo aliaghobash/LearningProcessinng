@@ -1,0 +1,68 @@
+int i;
+int y;
+void setup() {
+  size(800, 800);
+};
+void draw() {
+  stroke(0);
+  strokeWeight(10);
+  fill(202, 52, 51);
+  rectMode(CENTER);
+  rect(height/2, width/2, 700, 700);
+  fill( #FFFAF1);
+  //noStroke();
+  border();
+  startButton();
+};
+
+
+
+void border() {
+  rectMode(CORNER);
+  for (i=0; i<height; i+=50) {
+    //background(255);
+    rect(0, i, 50, 50);
+  } 
+
+  //background(255);
+  for (i=0; i<height; i+=50) {  
+    rect(749, i, 50, 50);
+  };
+
+  for (y=0; y<width; y+=50) {  
+    rect(y, 0, 50, 50);
+  };
+  for (y=0; y<width; y+=50) {  
+    rect(y, 749, 50, 50);
+  };
+};
+
+//_______________________________CUT_0FF___________________________
+void startButton() {
+   //fill(255);
+   // ellipse(height/2, width/2, 450, 450);
+   for (float i=0; i<255; i++) {
+    i=i+1*0.1;
+    fill(255); 
+    strokeWeight(20);
+    ellipse(height/2, width/2, 400, 400);
+   
+  }
+
+  int hundred=100;
+  //rotate(angle);
+
+  for (int i=0; i<300; i+=100)
+
+  { 
+    strokeWeight(20);
+    stroke(0); //change the color of the spiral
+    noFill();
+    ;
+    arc(height/2, width/2, hundred+i, hundred+i, radians(180), radians(360) );
+    arc(height/2-25, width/2, hundred*1.5+i, hundred*1.5+i, radians(0), radians(180));
+  }
+//save image , and then animate to spin
+//add font START
+ 
+  }
