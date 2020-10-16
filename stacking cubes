@@ -1,0 +1,43 @@
+
+void setup() { 
+  background(255);
+  size(500, 500);
+  rectMode(CENTER);
+};
+void draw() {
+  background(255);
+  roll();
+  spin();
+  fall();
+  bottom();
+};
+
+
+
+//______________
+float angle;
+float x;
+float y;
+void spin() {
+  rotate(angle);
+  angle=angle+1*0.01;
+  pushMatrix();
+  rect(0, 0, 100, 100);
+  popMatrix();
+};
+void roll() {
+  x=x+1*2;
+  translate(x, y);
+}
+void fall() {
+  if (x>width/2) {
+    x=width/2;
+    y= y+1*2;
+  }
+}
+void bottom() {
+if (y>height) {
+    translate(width/2, height); //yay!!
+    noLoop();
+  };
+};
